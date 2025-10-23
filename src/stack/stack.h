@@ -18,12 +18,12 @@ typedef struct {
 } Stack;
 
 // основные операции
-int stack_push(Stack* stack, int value);   // положить элемент на стек
-int stack_pop(Stack* stack);               // взять элемент со стека
-int stack_peek(Stack* stack);              // посмотреть на элемент на вершине стека
+int stackPush(Stack* stack, int value);   // положить элемент на стек
+int stackPop(Stack* stack);               // взять элемент со стека
+int stackPeek(Stack* stack);              // посмотреть на элемент на вершине стека
 
 // служебные функции
-Stack* stack_new(void);                    // создать пустой стек
-void stack_delete(Stack* stack);           // удалить весь стек (освободить память)
+Stack* stackNew(void);                    // создать пустой стек
+void stackDelete(Stack* stack);           // удалить весь стек (освободить память)
 
 #endif

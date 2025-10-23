@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 // создание пустого стека
-Stack* stack_new(void) {
+Stack* stackNew(void) {
     Stack* stack = (Stack*)malloc(sizeof(Stack));
     if (stack != NULL) {
         stack->top = NULL;
@@ -12,7 +12,7 @@ Stack* stack_new(void) {
 }
 
 // добавление элемента на стек
-int stack_push(Stack* stack, int value) {
+int stackPush(Stack* stack, int value) {
     if (stack == NULL) {
         printf("Stack is NULL!\n");
         return -1;
@@ -34,7 +34,7 @@ int stack_push(Stack* stack, int value) {
 }
 
 // взятие элемента со стека
-int stack_pop(Stack* stack) {
+int stackPop(Stack* stack) {
     if (stack == NULL || stack->top == NULL) {
         printf("Stack is empty!\n");
         return -1;
@@ -54,7 +54,7 @@ int stack_pop(Stack* stack) {
 }
 
 // просмотр элемента на вершине стека
-int stack_peek(Stack* stack) {
+int stackPeek(Stack* stack) {
     if (stack == NULL || stack->top == NULL) {
         printf("Stack is empty!\n");
         return -1;
@@ -64,7 +64,7 @@ int stack_peek(Stack* stack) {
 }
 
 // удаление всего стека и освобождение памяти
-void stack_delete(Stack* stack) {
+void stackDelete(Stack* stack) {
     if (stack == NULL) {
         return;
     }

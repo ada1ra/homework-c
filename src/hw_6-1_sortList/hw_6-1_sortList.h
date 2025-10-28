@@ -1,5 +1,5 @@
-#ifndef SORTLIST.H
-#define SORTLIST.H
+#ifndef SORTLIST_H
+#define SORTLIST_H
 
 // структура узла списка
 typedef struct Node {
@@ -41,3 +41,4 @@ int listContain(List* list, int value);
 int main();
 
 #endif
+

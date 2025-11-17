@@ -14,7 +14,7 @@ typedef struct {
 } List;
 
 // создание нового пустого списка
-List* listNew();
+List* listCreate();
 
 // вставка элемента в список по заданному индексу
 void listInsert(List* list, int index, int value);

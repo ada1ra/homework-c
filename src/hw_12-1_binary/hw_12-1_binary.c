@@ -2,45 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// функция для определения необходимого количества бит (двоичное представление зависит от количества бит)
-int calculateRequiredBits(int num1, int num2)
-{
-    int max_abs = 0;
-
-    // находим максимальное по модулю число из двух
-    if (abs(num1) > abs(num2)) {
-        max_abs = abs(num1);
-    } else {
-        max_abs = abs(num2);
-    }
-
-    // вычисляем сумму (для определения возможного переполнения)
-    long long sum = (long long)num1 + num2;
-
-    // находим максимальное значение из трёх: |num1|, |num2|, |sum|
-    if (abs(sum) > max_abs) {
-        max_abs = abs(sum);
-    }
-
-    // вычисляем необходимое количество бит
-    int bits_needed = 0;
-    while ((1LL << bits_needed) <= max_abs * 2LL) {
-        bits_needed++;
-    }
-
-    // минимальное количество бит
-    if (bits_needed < 4) {
-        bits_needed = 4;
-    }
-
-    // ограничим максимальное количество бит для нормального вывода
-    if (bits_needed > 32) {
-        bits_needed = 32;
-    }
-
-    return bits_needed;
-}
-
 // функция для перевода десятичного числа в двоичную строку (8-битное представление)
 char* decimalToBinary(int num, int bits)
 {
@@ -135,8 +96,8 @@ int main()
 
     printf("\n");
 
-    // автоматически определяем необходимое количество бит
-    int bits = calculateRequiredBits(num1, num2);
+    // определяем необходимое количество бит
+    int bits = 8;
 
     // перевод чисел в двоичный вид
     char* bin1 = decimalToBinary(num1, bits);
